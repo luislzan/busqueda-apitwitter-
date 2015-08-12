@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+</head>
+
+<body>
+  <form action="tweets.php" method="post">
+  <center>
+  <table width="332" border="1">
+  <tr>
+    <td width="263">Nombre de Usuario</td>
+    <td width="239"><label for="nom2"></label>
+      <input type="text" name="nom" id="nom2" /></td>
+  </tr>
+  <tr>
+    <td>Numero de Tweets</td>
+    <td><label for="num"></label>
+      <input type="text" name="num" id="num" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="Buscar" id="Buscar" value="Enviar" /></td>
+  </tr>
+</table>
+</center>
+</form>
+
+</body>
+</html>
