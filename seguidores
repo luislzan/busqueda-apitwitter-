@@ -1,0 +1,30 @@
+<?php
+
+require "api/autoload.php";
+
+use Abraham\TwitterOAuth\TwitterOAuth;
+
+$consumer_key = "xxx";
+$consumer_secret = "xxx;
+$token = "xxx;
+$token_secret = "xxxx
+
+$conexion = new TwitterOAuth($consumer_key, $consumer_secret, $token, $token_secret);
+$contenido = $conexion->get("followers/list");
+
+foreach($contenido->users as $follower){
+    echo "<div class='follower'>";
+    echo "<img src='".$follower->profile_image_url."'>";
+    echo "<span class='nombre'>" . $follower->screen_name . "</span>";
+    echo "<div class='clr'></div>";
+    echo "<span class='nombre'>" . $follower->location . "</span>";
+    echo "<br>";
+    echo "<div class='separador' style='background: url(".$follower->profile_background_image_url.")'></div>" ;
+    echo "<br>";
+    echo "Tiene : <b>" . $follower->friends_count . "</b> amigos, y <b>".$follower->statuses_count."</b> tweets";
+    echo "<hr>";
+    echo "<span style='color: #".$follower->profile_background_color."'>" . $follower->description . "</span>";
+    echo "<h4>Ultimo Tweet:</h4>";
+    echo $follower->status->text;
+    echo "</div>";
+?>
