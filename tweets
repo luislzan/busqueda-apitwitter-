@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Luis Alberto
+ * Date: 26/07/2015
+ * Time: 10:51 PM
+ *Muestra los tweet de un usuario y el numero de tweets que quieres que regrese 
+ */
+require "api/autoload.php";
+
+use Abraham\TwitterOAuth\TwitterOAuth;
+
+$consumer_key = "xxx";
+$consumer_secret = "xxx";
+$token = "xxx";
+$token_secret = "xxx";
+
+$conexion = new TwitterOAuth($consumer_key, $consumer_secret, $token, $token_secret);
+$contenido = $conexion->get("statuses/user_timeline",["screen_name" => $nombre = $_POST['nom'] , "count" => $numero = $_POST['num'] ]);
+
+$html = "";
+$i = 1;
+
+foreach($contenido as $tweet){
+	
+    $html .= $i . "->";
+    $html .= $tweet->text;
+    $html .= "<hr>";
+    $i ++;
+    
+}
+echo $html;
+?>
